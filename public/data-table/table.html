@@ -1,0 +1,96 @@
+     <!-- Static Table Start -->
+        <div class="data-table-area mg-tb-15">
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <h3>User Earning Process  Table</h3>
+                                    @include('inc.message')
+                                </div>
+                            </div>
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar"></div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" 
+                                         data-show-export="true"  data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state"><div class="text-right">S/N</div></th>
+                                                <th data-field="company" >User Id</th>
+                                                <th data-field="name" data-editable="false"><div class="text-center">Name</div></th>
+                                                <th data-field="email" >On Debt</th>
+                                                <th data-field="price" ><div class="text-center">Accumulating Earning</div></th>
+												<th data-field="date" ></th>
+												<th data-field="task" ><div class="text-center">Matured Earning</div></th>
+                                                <th data-field="id" >Action</th>
+                                                <th data-field="action"><div class="text-center">Date Updated</div></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @if($earnings !=  null)
+	                                     @php $i = 1; @endphp
+                                         @foreach($earnings as $earning)
+                                            <tr>
+                                                <td><div class="text-center">{{ $i++ }}</div></td>
+                                                <td><div class="text-center"><a  href="{{ url('view/user/detail', ['id'=>$earning->user_code]) }}">{{ $earning->user_code }}</a></div></td>
+                                                <td><div class="text-center">{{ $earning->name }}</div></td>
+                                               <td>
+                                               @if($earning->amount < 0)
+                                                <div class="text-center">
+                                               <buttom class="btn btn-danger btn-xs"> =N= {{ number_format($earning->amount, 2) }}</buttom>
+                                               </div>
+                                                @endif
+                                              </td>
+												<td>
+                                                @if($earning->amount > 0 && $earning->amount > $users[$earning->user_code]['monthlyEarning'])
+                                                <div class="text-center">
+                                                   <buttom class="btn btn-primary btn-xs"> =N= {{ number_format($earning->amount - $users[$earning->user_code]['monthlyEarning'], 2) }}</buttom>
+                                               </div>
+                                                @elseif($earning->amount > 0)
+                                                <div class="text-center">
+                                                   <buttom class="btn btn-primary btn-xs"> =N= {{ number_format($earning->amount, 2) }}</buttom>
+                                               </div>
+                                                @endif
+                                               </td> 
+                                               <td></td>
+                                                
+                                                @if( $users[$earning->user_code]['monthlyEarning'] > 0 )
+                                                <td>
+                                                <div class="text-center">
+                                                  <buttom class="btn btn-success btn-xs"> =N= {{number_format(($users[$earning->user_code]['monthlyEarning']), 2) }}</buttom>
+                                               </div>
+                                             </td>
+                                            <td>
+                                               
+                                               {{ Form::open(['url'=>'pay_staff_salary', 'role'=>'form', 'onsubmit'=>'return confirm("Are you sure about this ?");']) }}
+                                                   {{ csrf_field() }}
+                                                   <div class="text-center">
+                                                <input type="hidden" name="salary" value="{{($users[$earning->user_code]['monthlyEarning'])}}" />
+                                                <input type="hidden" name="user_code" value="{{ $earning->user_code }}" />
+                                                {{ Form::submit('Pay Salary', ['class'=>'btn btn-xs btn-danger']) }}
+                                                </div>
+                                                {{ Form::close() }}
+                                               
+                                               </td>
+                                                @else
+                                                <td></td>
+                                                <td></td>
+                                                @endif 
+                                               
+                                                <td><div class="text-center">{{ $earning->updated_at }}</div></td>     
+                                            </tr>
+                                          @endforeach
+                                        @endif
+                                         </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+     
+        <!-- Static Table End -->

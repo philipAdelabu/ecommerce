@@ -1,0 +1,158 @@
+/* [Master Stylesheet v1.0] */
+/* :: :: 1.0 Import Fonts */
+/*
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900|Open+Sans:400,600,700");
+*/
+/* :: 2.0 Import All CSS */
+
+@import url(css/owl.carousel.min.css);
+/*@import url(css/font-awesome.min.css); */
+@import url(css/classy-nav.min.css);
+/* :: 3.0 Base CSS */
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px; }
+
+
+
+
+
+
+/* :: 5.0 Header Area CSS */
+.header-area {
+  position: relative;
+  z-index: 100;
+  width: 100%; }
+  .header-area .top-header {
+    width: 100%;
+    height: 60px;
+    background-color: #292929; }
+    @media only screen and (max-width: 767px) {
+      .header-area .top-header {
+        height: 80px;
+        padding: 15px 0; } }
+    @media only screen and (max-width: 767px) {
+      .header-area .top-header .top-header-content {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+    .header-area .top-header .top-headline p {
+      margin-bottom: 0;
+      font-family: "Montserrat", sans-serif;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 400; }
+      .header-area .top-header .top-headline p span {
+        color: #ffaf02; }
+    .header-area .top-header .login-faq-earn-money a {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 400;
+      margin-right: 30px; }
+      .header-area .top-header .login-faq-earn-money a:last-child {
+        margin-right: 0; }
+      .header-area .top-header .login-faq-earn-money a:hover, .header-area .top-header .login-faq-earn-money a:focus, .header-area .top-header .login-faq-earn-money a.active {
+        color: #ffaf02; }
+  .header-area .cryptos-main-menu {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    height: 60px; }
+    @media only screen and (max-width: 767px) {
+      .header-area .cryptos-main-menu {
+        height: 40px; } }
+    .header-area .cryptos-main-menu .classy-nav-container {
+      background-color: transparent; }
+    .header-area .cryptos-main-menu .classy-navbar {
+      height: 60px;
+      padding: 0; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .header-area .cryptos-main-menu .classy-navbar {
+          padding: 0; } }
+      @media only screen and (max-width: 767px) {
+        .header-area .cryptos-main-menu .classy-navbar {
+          height: 40px; } }
+      .header-area .cryptos-main-menu .classy-navbar .classynav ul li a {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: capitalize; }
+        .header-area .cryptos-main-menu .classy-navbar .classynav ul li a:hover, .header-area .cryptos-main-menu .classy-navbar .classynav ul li a:focus {
+          color: #ffaf02; }
+    .header-area .cryptos-main-menu .classynav ul li .dropdown li a,
+    .header-area .cryptos-main-menu .classynav ul li .megamenu li a {
+      font-size: 14px; }
+    .header-area .cryptos-main-menu .classynav .header-newsletter-form {
+      margin-left: 100px; }
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .header-area .cryptos-main-menu .classynav .header-newsletter-form {
+          margin-left: 30px; } }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .header-area .cryptos-main-menu .classynav .header-newsletter-form {
+          margin-left: 18px;
+          margin-top: 15px; } }
+      @media only screen and (max-width: 767px) {
+        .header-area .cryptos-main-menu .classynav .header-newsletter-form {
+          margin-left: 18px;
+          margin-top: 15px; } }
+      .header-area .cryptos-main-menu .classynav .header-newsletter-form form {
+        width: 265px;
+        height: 35px;
+        background-color: #eef3f6;
+        position: relative;
+        z-index: 1; }
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          .header-area .cryptos-main-menu .classynav .header-newsletter-form form {
+            width: 220px; } }
+        .header-area .cryptos-main-menu .classynav .header-newsletter-form form input {
+          width: 100%;
+          height: 35px;
+          border: none;
+          background-color: transparent;
+          padding: 0 15px;
+          font-size: 12px;
+          font-style: italic; }
+        .header-area .cryptos-main-menu .classynav .header-newsletter-form form button {
+          width: 90px;
+          height: 35px;
+          border: none;
+          background-color: #eef3f6;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 12px;
+          font-weight: 600;
+          color: #292929;
+          cursor: pointer;
+          border-bottom: 2px solid #ffaf02;
+          -webkit-transition-duration: 500ms;
+          transition-duration: 500ms; }
+          .header-area .cryptos-main-menu .classynav .header-newsletter-form form button:hover {
+            background-color: #292929;
+            color: #ffaf02; }
+
+.megamenu-slides .owl-prev,
+.megamenu-slides .owl-next {
+  background: #0d104d;
+  background: -webkit-linear-gradient(to right, #0d104d, #28408b);
+  background: linear-gradient(to right, #0d104d, #28408b);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #ffffff;
+  top: 50%;
+  margin-top: -15px;
+  left: 5%;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  font-size: 18px;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms; }
+.megamenu-slides .owl-next {
+  left: auto;
+  right: 5%; }

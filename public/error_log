@@ -1,0 +1,34 @@
+[03-Jul-2024 16:35:55 UTC] PHP Warning:  require(/home1/a1655usr/buypc.ng/../vendor/autoload.php): Failed to open stream: No such file or directory in /home1/a1655usr/buypc.ng/index.php on line 36
+[03-Jul-2024 16:35:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/a1655usr/buypc.ng/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/a1655usr/buypc.ng/index.php:36
+Stack trace:
+#0 {main}
+  thrown in /home1/a1655usr/buypc.ng/index.php on line 36
+[03-Jul-2024 16:36:30 UTC] PHP Warning:  require(/home1/a1655usr/buypc.ng/../vendor/autoload.php): Failed to open stream: No such file or directory in /home1/a1655usr/buypc.ng/index.php on line 36
+[03-Jul-2024 16:36:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/a1655usr/buypc.ng/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/a1655usr/buypc.ng/index.php:36
+Stack trace:
+#0 {main}
+  thrown in /home1/a1655usr/buypc.ng/index.php on line 36
+[03-Jul-2024 16:36:45 UTC] PHP Warning:  require(/home1/a1655usr/buypc.ng/../vendor/autoload.php): Failed to open stream: No such file or directory in /home1/a1655usr/buypc.ng/index.php on line 36
+[03-Jul-2024 16:36:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/a1655usr/buypc.ng/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/a1655usr/buypc.ng/index.php:36
+Stack trace:
+#0 {main}
+  thrown in /home1/a1655usr/buypc.ng/index.php on line 36
+[03-Jul-2024 16:39:23 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home1/a1655usr/buypc.ng/buypc/vendor/composer/platform_check.php on line 24
+[03-Jul-2024 16:39:25 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home1/a1655usr/buypc.ng/buypc/vendor/composer/platform_check.php on line 24
+[03-Jul-2024 16:39:27 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home1/a1655usr/buypc.ng/buypc/vendor/composer/platform_check.php on line 24
+[03-Jul-2024 16:39:27 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home1/a1655usr/buypc.ng/buypc/vendor/composer/platform_check.php on line 24
+[27-May-2025 20:19:48 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 20:33:41 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 20:55:57 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 21:25:19 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 21:46:20 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 21:46:21 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 22:30:26 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 23:33:11 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 23:38:26 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 23:40:56 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[27-May-2025 23:44:32 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[28-May-2025 00:27:40 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[28-May-2025 00:32:54 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 114
+[28-May-2025 00:36:25 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 115
+[28-May-2025 00:37:03 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\PagesController::getWarrantyPolicy() in /home1/a1655usr/buypc.ng/buypc/app/Http/Controllers/PagesController.php on line 115

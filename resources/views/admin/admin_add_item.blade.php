@@ -1,275 +1,672 @@
-@extends('layout.admin')
-    @section('content')
-  
-<!-- Heading
-================================================ -->
-<div class="page-header">
-<h3>Add Item.</h3>
-</div>
-<!-- The beginning of the body -->
- @include('inc.message')
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="row-fluid">
-<div class="span1"></div>
-<div class="span10">
-{{ Form::open(['url'=>'admin_add_product', 'files' => 'true', 'role'=>'form', 'enctype'=>'multipart/form-data']) }}
-     {{ csrf_field() }}
-        <fieldset>
-        <div class="well form-inline">
-         <div class="row-fluid">
 
-            <div class="span5">
-                  <div class="control-group">
-                    <label style="color: green" class="control-label" for="new_price">New Price</label>
-                    <div class="controls">
-                      <input required name="new_price" type="number" class="input-large" id="new_price">
+<!-- add-patient24:06-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="index-2.html" class="logo">
+					<img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">L</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">G</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">View all Notifications</a>
+                        </div>
                     </div>
-                  </div>
-               </div>
-          
-		  <div class="span5">
-        <div class="control-group">
-            <label class="control-label" for="old_price">Old Price <em style="color : brown ">(Optional)</em></label>
-             <div class="controls">
-                <input name="old_price" type="number" class="input-large" id="old_price">
-			       </div>
+                </li>
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                </li>
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+                        <span>Admin</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+						<a class="dropdown-item" href="settings.html">Settings</a>
+						<a class="dropdown-item" href="login.html">Logout</a>
+					</div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-          <div class="span12">
-              <div class="control-group">
-                  <label class="control-label" for="item_condition">Item condition <i style="color : red"> (Optional)</i></label>
-                    <input  name="item_condition"  class="input-xxlarge" id="item_condition">
-              </div>
-          </div>
-
-               
-		
-         </div>	
-	</div>
-
-       
-  
-   <br />
-      <div class="row-fluid">
-      <div class="span7">
-          <div class="control-group">
-              <label class="control-label" for="name">Descriptive Name</label>
-              <div class="controls">
-                <input required name="name" type="text" class="input-xlarge" id="name">
-              </div>
-          </div>
-       </div>
-           <div class="span3">
-              <div class="control-group">
-                  <label class="control-label" for="quantity">Quantity</label>
-                  <div class="controls">
-                    <input required size="3" min=1 name="quantity" type="number" class="input-large" id="quantity">
-                  </div>
-              </div>
-          </div>
-
-          <div class="span12">
-              <div class="control-group">
-                  <label class="control-label" for="item_condition">Item condition <i style="color : red"> (Optional)</i></label>
-              
-                    <input  name="item_condition"  class="input-xxlarge" id="item_condition">
-              
-              </div>
-          </div>
-
-     </div> <!-- The end of the row-fluid --> 
-  <br />
-
-
-         
- 
-     <div class="row-fluid">
-
-     <div class="span5">
-        <div class="control-group">
-            <label class="control-label" for="category">Category</label>
-            <div class="controls">
-            <select required name="category" id="category" class="input-xlarge form-control" onchange="load_subCategory();" >
-               <option  value>-- Select Category --</option>
-               @if(count($categories) > 0)
-                    @foreach($categories as $catg)
-                    <option value="{{ $catg->id .'/'. $catg->name }}">{{ $catg->name }}</option>
-                    @endforeach
-               @endif
-        
-              </select>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+                        <li>
+                            <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                        </li>
+						<li>
+                            <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
+                        </li>
+                        <li>
+                            <a href="appointments.html"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
+                        </li>
+                        <li>
+                            <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
+                        </li>
+                        <li>
+                            <a href="departments.html"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
+                        </li>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="employees.html">Employees List</a></li>
+								<li><a href="leaves.html">Leaves</a></li>
+								<li><a href="holidays.html">Holidays</a></li>
+								<li><a href="attendance.html">Attendance</a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-money"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoices.html">Invoices</a></li>
+								<li><a href="payments.html">Payments</a></li>
+								<li><a href="expenses.html">Expenses</a></li>
+								<li><a href="taxes.html">Taxes</a></li>
+								<li><a href="provident-fund.html">Provident Fund</a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-book"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="salary.html"> Employee Salary </a></li>
+								<li><a href="salary-view.html"> Payslip </a></li>
+							</ul>
+						</li>
+                        <li>
+                            <a href="chat.html"><i class="fa fa-comments"></i> <span>Chat</span> <span class="badge badge-pill bg-primary float-right">5</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-video-camera camera"></i> <span> Calls</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="voice-call.html">Voice Call</a></li>
+                                <li><a href="video-call.html">Video Call</a></li>
+                                <li><a href="incoming-call.html">Incoming Call</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="compose.html">Compose Mail</a></li>
+                                <li><a href="inbox.html">Inbox</a></li>
+                                <li><a href="mail-view.html">Mail View</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-commenting-o"></i> <span> Blog</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog View</a></li>
+                                <li><a href="add-blog.html">Add Blog</a></li>
+                                <li><a href="edit-blog.html">Edit Blog</a></li>
+                            </ul>
+                        </li>
+						<li>
+							<a href="assets.html"><i class="fa fa-cube"></i> <span>Assets</span></a>
+						</li>
+						<li>
+							<a href="activities.html"><i class="fa fa-bell-o"></i> <span>Activities</span></a>
+						</li>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-flag-o"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="expense-reports.html"> Expense Report </a></li>
+								<li><a href="invoice-reports.html"> Invoice Report </a></li>
+							</ul>
+						</li>
+                        <li>
+                            <a href="settings.html"><i class="fa fa-cog"></i> <span>Settings</span></a>
+                        </li>
+                        <li class="menu-title">UI Elements</li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-laptop"></i> <span> Components</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="uikit.html">UI Kit</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-edit"></i> <span> Forms</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="form-basic-inputs.html">Basic Inputs</a></li>
+                                <li><a href="form-input-groups.html">Input Groups</a></li>
+                                <li><a href="form-horizontal.html">Horizontal Form</a></li>
+                                <li><a href="form-vertical.html">Vertical Form</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-table"></i> <span> Tables</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="tables-basic.html">Basic Tables</a></li>
+                                <li><a href="tables-datatables.html">Data Table</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a>
+                        </li>
+                        <li class="menu-title">Extras</li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-columns"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="login.html"> Login </a></li>
+                                <li><a href="register.html"> Register </a></li>
+                                <li><a href="forgot-password.html"> Forgot Password </a></li>
+                                <li><a href="change-password2.html"> Change Password </a></li>
+                                <li><a href="lock-screen.html"> Lock Screen </a></li>
+                                <li><a href="profile.html"> Profile </a></li>
+                                <li><a href="gallery.html"> Gallery </a></li>
+                                <li><a href="error-404.html">404 Error </a></li>
+                                <li><a href="error-500.html">500 Error </a></li>
+                                <li><a href="blank-page.html"> Blank Page </a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"><i class="fa fa-share-alt"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"><span>Level 1</span> <span class="menu-arrow"></span></a>
+                                    <ul style="display: none;">
+                                        <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+                                        <li class="submenu">
+                                            <a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
+                                            <ul style="display: none;">
+                                                <li><a href="javascript:void(0);">Level 3</a></li>
+                                                <li><a href="javascript:void(0);">Level 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"><span>Level 1</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          </div>
-
-    <div class="span5">
-        <div class="control-group">
-            <label class="control-label" for="sub_category">Brand Name</label>
-            <div class="controls">
-              <select required name="sub_category" id="sub_category">
-               <option  value>-- Select Brand Name --</option>
-              </select>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Add Patient</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>First Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Username <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input class="form-control" type="password">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <input class="form-control" type="password">
+                                    </div>
+                                </div>
+								<div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Date of Birth</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group gender-select">
+										<label class="gen-label">Gender:</label>
+										<div class="form-check-inline">
+											<label class="form-check-label">
+												<input type="radio" name="gender" class="form-check-input">Male
+											</label>
+										</div>
+										<div class="form-check-inline">
+											<label class="form-check-label">
+												<input type="radio" name="gender" class="form-check-input">Female
+											</label>
+										</div>
+									</div>
+                                </div>
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="form-group">
+												<label>Address</label>
+												<input type="text" class="form-control ">
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Country</label>
+												<select class="form-control select">
+													<option>USA</option>
+													<option>United Kingdom</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>City</label>
+												<input type="text" class="form-control">
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>State/Province</label>
+												<select class="form-control select">
+													<option>California</option>
+													<option>Alaska</option>
+													<option>Alabama</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 col-md-6 col-lg-3">
+											<div class="form-group">
+												<label>Postal Code</label>
+												<input type="text" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Phone </label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<label>Avatar</label>
+										<div class="profile-upload">
+											<div class="upload-img">
+												<img alt="" src="assets/img/user.jpg">
+											</div>
+											<div class="upload-input">
+												<input type="file" class="form-control">
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Status</label>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="status" id="patient_active" value="option1" checked>
+									<label class="form-check-label" for="patient_active">
+									Active
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="status" id="patient_inactive" value="option2">
+									<label class="form-check-label" for="patient_inactive">
+									Inactive
+									</label>
+								</div>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn">Create Patient</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-          </div>
-       </div>
-
-       <hr />
-   
-
- 
-   
-       
-<h5>Add Features and Specification(s)  <b style="color : brown">(Optional)</b></h5>
-<table class="table table-striped table-bordered table-hover table-responsible" id="placeholder"></table>
-<hr />
-<div  style="background-color : #eee; padding : 10px;">
-     
-<div class="row-fluid">
-  
-   <div class="span4 ">
-    <label>Feature</label>
-    <input id="key" style="font-weight:bold;" type="text" placeholder="Feature" class="form-control" >
+			<div class="notification-box">
+                <div class="msg-sidebar notifications msg-noti">
+                    <div class="topnav-dropdown-header">
+                        <span>Messages</span>
+                    </div>
+                    <div class="drop-scroll msg-list-scroll" id="msg_list">
+                        <ul class="list-box">
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Richard Miles </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item new-message">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">John Doe</span>
+                                            <span class="message-time">1 Aug</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Tarah Shropshire </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Mike Litorus</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Catherine Manseau </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">D</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Domenic Houston </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">B</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Buster Wigton </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Rolland Webber </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Claire Mapes </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Melita Faucher</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Jeffery Lalor</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">L</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Loren Gatlin</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Tarah Shropshire</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="chat.html">See all messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="span6">
-    <label>Spec</label> 
-    <input  id="val" type="text" placeholder="Spec" class=" form-control input-xlarge" >
-    <a style="" class="btn btn-xs btn-primary" onclick=" return addField();">Click To Add spec</a>
-  </div>
-
- </div>
- <span style="font-size: 15px;">e.g &nbsp;&nbsp; <b>Size :</b> &nbsp;&nbsp;&nbsp;&nbsp;29 inches</span> 
- <br /><i style="color : brown; font-size: 12px;">(You can add more <b>specification</b> of your item from here. Write the <b>Attribute</b> and <b>Value</b> in the input fields above.)</i> <br />
-  
-</div>
-    <hr />
-
-    <div class="control-group">
-            <label class="control-label" for="description">More Details and Description  <b style="color : brown">(Optional)</b></label>
-            <div class="controls">
-              <textarea name="description" class="input-xxlarge" id="description" rows="5"></textarea>
-            </div>
-          </div>
-      <hr />
-      <div class="control-group">
-            <label class="control-label" for="package-item">Add Items inside package separated by comma or semi-colon  <b style="color : brown">(Optional)</b></label>
-            <div class="controls">
-              <textarea name="package" class="input-xxlarge" id="package-item" rows="5"></textarea>
-            </div>
-          </div>
-      <hr />
-
-  <h4>Image size should be 1200 x 1000 px</h4>
-
-            <div class="row-fluid">
-   
-                  <div class="span6 control-group">
-                    <label class="control-label" for="images">Image 1  <i style="color : green"><b>(Required)</b></i></label>
-                    <div class="controls">
-                      <input required="true" class="input-file" id="images" name="images[]" type="file">
-                    </div>
-                  </div>
-
-                  <div class="span6 control-group">
-                    <label class="control-label" for="images">Image 2  <i style="color : brown">(Optional)</i></label>
-                    <div class="controls">
-                      <input  class="input-file" id="image_2" name="images[]" type="file">
-                    </div>
-                  </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span6 control-group">
-                <label class="control-label" for="image_3">Image 3  <i style="color : brown">(Optional)</i></label>
-                <div class="controls">
-                  <input class="input-file" id="image_3" name="images[]" type="file">
-                </div>
-              </div>
-              <div class="span6 control-group">
-                <label class="control-label" for="image_4">Image 4  <i style="color : brown">(Optional)</i></label>
-                <div class="controls">
-                  <input  class="input-file" id="image_4" name="images[]" type="file">
-                </div>
-              </div>
-          </div>
-
-          <div class="span12 control-group"><br />
-              <label class="control-lable" for="video">Embed Youtube video url  <i style="color : brown">(Optional)</i></label>
-              <input type="text" name="video" id="video" class="input-xxlarge"
-              placeholder="https://www.youtube.com/embed/v9sm86IEPIg?si=2Vg_W7_CibBPNoTi" />
-          </div>
-
-        <hr /><br />
-          <div style="text-align:center" class="">
-            <button type="submit" class="btn btn-success">Submit Item</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="reset" class="btn btn-danger">Reset</button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url('admin_view_item') }}" class="btn btn-info">Cancel</a>
-          </div>
-        </fieldset>
-      {{ Form::close() }}
-      </div>
-      </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
 
 
-      <script>
-         function load_subCategory(){
-            catg_id = document.getElementById('category').value;
-            catg_id = catg_id.split('/');
-            $.get("get/subCategory/"+catg_id,
-            function(data, status){
-          // alert("Data: " + JSON.parse(data) + "\nStatus: " + status);
-            if(status && data){
-                sub_catg = document.getElementById('sub_category');
-                while(sub = document.getElementById('sub_catg')){
-                    sub_catg.removeChild(sub);
-                }
-                data = JSON.parse(data);
-               sub_catg = document.getElementById('sub_category');
-               for(var i = 0; i < data.length; i++){
-                 option = document.createElement('option');
-                 option.setAttribute('value', data[i]);
-                 option.setAttribute('id','sub_catg');
-                 option.innerHTML = data[i]; 
-                 sub = sub_catg.appendChild(option); 
-               } 
-              }
-             });
-         }
-         
-        
-         function addField(){
-            k = document.getElementById('key').value;
-            val = document.getElementById('val').value;
-
-           
-           
-            if(val == '' || val == null) { $('#val').focus(); $('#val').css("border-color", "red");  return; }
-            if(k == '' || k == null) { $('#key').focus(); $('#key').css("border-color", "red");  return; }
-            
-            //Get the attention of the lastchild of the table
-            table = $('#placeholder');
-            table_children = table.find('tr');
-            if(table_children.length > 0){ id = parseInt(table_children[table_children.length - 1].getAttribute('id')) + 1; }
-            else id = 1;
-           
-            document.getElementById('key').value = '';
-            document.getElementById('val').value = '';
-            
-            tr = document.createElement('tr');
-            tr.setAttribute('id', id);
-            tr.innerHTML = '<td><input type="hidden" id="key_'+ id +'" name="key_'+ id +'" value="'+ k +'" /><b>'+ k +'</b> </td>'+
-                        '<td><input type="hidden" id="value_'+ id +'" name="value_'+ id +'" value="'+ val +'"/> '+ val +'</td>'+
-                        '<td style="text-align: right"> <a class="btn btn-xs btn-danger" onclick="remove_row('+id+');">Remove</a> </td>';
-   
-               (document.getElementById('placeholder')).appendChild(tr);
-          
-         }
-
-         function remove_row(id){
-             document.getElementById(id).remove();
-         }
-
-
-      </script>
-	
-    @endsection
+<!-- add-patient24:07-->
+</html>

@@ -76,10 +76,24 @@ class AdminController extends Controller
 
 
      public function getAdminDashboard(){
-   
+        
+        $purchases = DB::table('users')->join('purchases', 'users.id', '=', 'purchases.user_id')
+        ->select('users.name as user_name', 'users.*',  'purchases.name as product_name', 'purchases.*')
+        ->where('users.status', '=', 0)
+        ->orderBy('users.created_at', 'desc')->distinct()->get(5);
+
+        $users = User::orderBy('updated_at','asc')->get();
         $data = null;
         $categories = Category::orderBy('name','asc')->get();
-         return view('admin.a_dashboard', ['data'=>$data, 'categories'=>$categories]);
+        $items = Item::orderBy('updated_at', 'desc')->get();
+  
+         return view('admin.a_dashboard', [
+             'data'=>$data,
+             'categories'=>$categories, 
+             'users'=>$users,
+             'purchases' => $purchases,
+             'items' => $items,
+            ]);
      }
 
 
